@@ -71,7 +71,8 @@
   "scripts": {
     "start": "webpack serve --mode development",
     "dev": "webpack --mode development",
-    "build": "webpack --mode production",
+    "build-production": "webpack --mode production",
+    "build": "react-scripts build",
     "test": "jest",
     "test-coverage": "jest --coverage",
     "test-all": "jest",
