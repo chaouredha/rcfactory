@@ -35,3 +35,5 @@ jobs:
 
       - name: Deploy to GH Pages
         run: npm run deploy
+        with:
+          publish_dir: ./
