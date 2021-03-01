@@ -72,7 +72,7 @@
     "start": "webpack serve --mode development",
     "dev": "webpack --mode development",
     "build-production": "webpack --mode production",
-    "build": "react-scripts build",
+    "build": "webpack build",
     "test": "jest",
     "test-coverage": "jest --coverage",
     "test-all": "jest",
