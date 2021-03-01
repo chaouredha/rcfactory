@@ -36,11 +36,11 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to GH Pages
-        run: npm run deploy
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+      - name: Deploy
+          uses: peaceiris/actions-gh-pages@v3
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./public
 
       - name: Updating Domain
         run: echo "Update domain"
