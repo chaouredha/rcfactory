@@ -38,7 +38,8 @@ jobs:
 
       - run: npm publish
         env:
-          password: ${{secrets.PACKAGES}}
+          username: ${{secrets.GITHUB_USERNAME}}
+          password: ${{secrets.GITHUB_PASSWORD}}
 
       - name: Publish to GitHub packages
         uses: mr-smithers-excellent/docker-build-push@v5
