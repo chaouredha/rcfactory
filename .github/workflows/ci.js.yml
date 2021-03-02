@@ -37,10 +37,12 @@ jobs:
         run: npm run build-production
 
       - name: Publish to GitHub packages
-        uses: mr-smithers-excellent/docker-build-push@v5
+        uses: VaultVulp/gp-docker-action@1.1.7
         with:
           image: ${{github.repository}} - ${{github.run_number}}
           registry: ghcr.io
+          dockerfile: Dockerfile_server
+          github-token: ${{ secrets.GITHUB_TOKEN }}
         env:
           NODE_AUTH_TOKEN: ${{github.PASSWORD}}
 
