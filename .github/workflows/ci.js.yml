@@ -48,7 +48,7 @@ jobs:
       - name: Publish to Docker Hub
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          image: ${{ secrets.GHCR_USERNAME }}/${{github.repository}}-${{github.run_number}}
+          image: chaouredha/rcfactory:${{github.repository}}-${{github.run_number}}
           registry: docker.io
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
