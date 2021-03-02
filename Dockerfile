@@ -1,11 +1,4 @@
-#
-# Node.js runtime Dockerfile
-#
-# https://github.com/dockerfile/nodejs-runtime
-#
-
-# Pull base image.
-FROM dockerfile/nodejs
+FROM node:12.1-alpine
 
 # Set instructions on build.
 ONBUILD ADD package.json /app/
@@ -19,4 +12,4 @@ WORKDIR /app
 CMD ["npm", "start"]
 
 # Expose ports.
-EXPOSE 8080
+EXPOSE 3000
