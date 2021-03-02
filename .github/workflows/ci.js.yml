@@ -37,7 +37,7 @@ jobs:
         run: npm run build-production
 
       - name: Publish to GitHub packages
-        uses: VaultVulp/gp-docker-action@1.1.7
+        uses: mr-smithers-excellent/docker-build-push@v5
         with:
           image-name: ${{github.repository}} - ${{github.run_number}}
           dockerfile: Dockerfile_server
