@@ -34,27 +34,21 @@ jobs:
       - name: Build production
         run: npm run build-production
 
-      - name: Login to Docker Hub
-        uses: docker/login-action@v1
+      - name: Publish to GitHub packages
+        uses: docker/build-push-action@v1
+        with:
+         username: ${{ secrets.actor }}
+         password: ${{ secrets.DEPLOY_ACCESS_TOKEN }}
+         registry: ${{github.repository}}/next
+         tags: lates, ${{github.run_number}}
+
+      - name: Publish to Docker Hub
+        uses: docker/build-push-action@v1
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: Set up Docker Buildx
-        id: buildx
-        uses: docker/setup-buildx-action@v1
-
-      - name: Build and push
-        id: docker_build
-        uses: docker/build-push-action@v5
-        with:
-          context: ./
-          file: ./Dockerfile
-          push: true
-          tags: chaouredha/rcfactory:latest
-
-      - name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
+          registry: ${{chaouredha.repository}}/next
+          tags: lates, ${{github.run_number}}
 
       - name: Deploy
         run: npm run deploy
