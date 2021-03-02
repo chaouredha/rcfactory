@@ -39,7 +39,7 @@ jobs:
       - name: Publish to GitHub packages
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          image: chaouredha/rcfactory
+          image: ${{github.repository}} - ${{github.run_number}}
           tags: v1, latest
           registry: ghcr.io
           dockerfile: Dockerfile
