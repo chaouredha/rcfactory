@@ -3,7 +3,7 @@
   "name": "rcfactory",
   "version": "1.0.0-SNAPSHOT",
   "description": "rcFactory",
-  "private": true,
+  "private": false,
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@chaouredha"
   },
