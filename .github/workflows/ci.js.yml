@@ -39,8 +39,7 @@ jobs:
       - name: Publish to GitHub packages
         uses: VaultVulp/gp-docker-action@1.1.7
         with:
-          image: ${{github.repository}} - ${{github.run_number}}
-          registry: ghcr.io
+          image-name: ${{github.repository}} - ${{github.run_number}}
           dockerfile: Dockerfile_server
           github-token: ${{ secrets.GITHUB_TOKEN }}
         env:
