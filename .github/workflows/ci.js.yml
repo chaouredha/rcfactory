@@ -12,8 +12,6 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         node-version: [12.x]
-        registry-url: http://npm/pkg.github.com
-        scope: '@chaouredha'
 
     steps:
       - name: Checkout repository
@@ -23,6 +21,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+          registry-url: http://npm/pkg.github.com
+          scope: '@chaouredha'
 
       - name: Install dependencies
         run: npm install
