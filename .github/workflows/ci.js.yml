@@ -40,7 +40,7 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
           name: chaouredha/rcfactory/rcfactory
-          registry: docker.pkg.github.com
+          registry: ghcr.io
           dockerfile: Dockerfile
           username: ${{ secrets.GHCR_USERNAME }}
           password: ${{ secrets.GHCR_TOKEN }}
