@@ -41,7 +41,6 @@ jobs:
         with:
           image: ${{github.repository}} - ${{github.run_number}}
           registry: ghcr.io
-          dockerfile: Dockerfile_server
           password: ${{ secrets.GITHUB_TOKEN }}
           buildArgs: build -t ${{github.repository}} - ${{github.run_number}}
 
