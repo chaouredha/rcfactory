@@ -39,8 +39,10 @@ jobs:
       - name: Publish to GitHub packages
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          image: rcfactory
+          image: chaouredha/rcfactory
+          tags: v1, latest
           registry: ghcr.io
+          dockerfile: Dockerfile.ci
           username: ${{ secrets.GITHUB_USERNAME }}
           password: ${{ secrets.GITHUB_PASSWORD }}
 
