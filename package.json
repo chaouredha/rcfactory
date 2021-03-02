@@ -44,9 +44,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chaouredha/gestion-contact-frontend.git"
+    "url": "git+https://github.com/chaouredha/rcfactory.git"
   },
-  "author": "chaou.redha@gmail.com",
+  "author": "chaouredha@gmail.com",
   "bugs": {
     "url": "https://github.com/chaouredha/gestion-contact-frontend/issues"
   },
