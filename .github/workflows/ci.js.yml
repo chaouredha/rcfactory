@@ -39,11 +39,10 @@ jobs:
       - name: Publish to GitHub packages
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          image: ${{github.repository}} - ${{github.run_number}}
+          image: rcfactory
           registry: ghcr.io
           username: ${{ secrets.GITHUB_USERNAME }}
           password: ${{ secrets.GITHUB_PASSWORD }}
-          dockerfile: ./Dockerfile
 
       - name: Publish to Docker Hub
         uses: mr-smithers-excellent/docker-build-push@v5
