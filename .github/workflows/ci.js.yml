@@ -39,10 +39,11 @@ jobs:
       - name: Publish to GitHub packages
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          image-name: ${{github.repository}} - ${{github.run_number}}
+          image: ${{github.repository}} - ${{github.run_number}}
           dockerfile: Dockerfile_server
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          build-context: build -t ${{github.repository}} - ${{github.run_number}}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          buildArgs: build -t ${{github.repository}} - ${{github.run_number}}
+          push: true
 
       - name: Publish to Docker Hub
         uses: mr-smithers-excellent/docker-build-push@v5
