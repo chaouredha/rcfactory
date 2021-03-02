@@ -42,7 +42,7 @@ jobs:
           image: chaouredha/rcfactory
           tags: v1, latest
           registry: ghcr.io
-          dockerfile: Dockerfile.ci
+          dockerfile: Dockerfile
           username: ${{ secrets.GITHUB_USERNAME }}
           password: ${{ secrets.GITHUB_PASSWORD }}
 
