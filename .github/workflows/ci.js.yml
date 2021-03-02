@@ -37,8 +37,8 @@ jobs:
         run: npm run build-production
 
       - name: Publish to GitHub packages
-        uses: mr-smithers-excellent/docker-build-push@v5
         run: doker --build-arg VARIABLE_NAME=${{github.repository}} - ${{github.run_number}}
+        uses: mr-smithers-excellent/docker-build-push@v5
         with:
           image: ${{github.repository}} - ${{github.run_number}}
           registry: ghcr.io
