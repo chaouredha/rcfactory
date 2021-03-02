@@ -41,8 +41,6 @@ jobs:
         with:
           image: ${{github.repository}} - ${{github.run_number}}
           registry: ghcr.io
-          username: ${{ secrets.GITHUB_USERNAME }}
-          password: ${{ secrets.GITHUB_PASSWORD }}
 
       - name: Publish to Docker Hub
         uses: mr-smithers-excellent/docker-build-push@v5
