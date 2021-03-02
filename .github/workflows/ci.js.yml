@@ -39,9 +39,10 @@ jobs:
       - name: Publish to GitHub packages
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          image: ${{github.repository}} - ${{github.run_number}}
+          image: ghcr.io/OWNER/${{github.repository}} - ${{github.run_number}}
           registry: ghcr.io
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ secrets.GITHUB_USERNAME }}
+          password: ${{ secrets.GITHUB_PASSWORD }}
           buildArgs: build -t ${{github.repository}} - ${{github.run_number}}
 
       - name: Publish to Docker Hub
