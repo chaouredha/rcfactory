@@ -46,7 +46,7 @@ jobs:
           password: ${{ secrets.GHCR_TOKEN }}
 
       - name: Publish to Docker Hub
-        uses: mr-smithers-excellent/docker-build-push@v5
+        uses: docker/build-push-action@v2
         with:
           image: docker-hub-repo/chaouredha/rcfactory-${{github.run_number}}
           registry: docker.io
