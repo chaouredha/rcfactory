@@ -41,6 +41,8 @@ jobs:
         with:
           image: ${{github.repository}} - ${{github.run_number}}
           registry: ghcr.io
+        env:
+          NODE_AUTH_TOKEN: ${{github.PASSWORD}}
 
       - name: Publish to Docker Hub
         uses: mr-smithers-excellent/docker-build-push@v5
