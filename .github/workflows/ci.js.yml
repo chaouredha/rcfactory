@@ -37,7 +37,7 @@ jobs:
         run: npm run build-production
 
       - name: Publish to GitHub packages
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: mr-smithers-excellent/docker-build-push@v5
         with:
           name: chaouredha/rcfactory/rcfactory
           registry: ghcr.io
