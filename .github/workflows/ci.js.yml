@@ -52,5 +52,16 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: Deploy to AWS
+        uses: mr-smithers-excellent/docker-build-push@v5
+        with:
+          image: chaouredha/rcfactory
+          registry: ${{AWS_ACCOUNT_NUMBER}}.dkr.ecr.us-east-1.amazonaws.com
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+        run: npm run deploy
+
       - name: Updating Domain
         run: echo "Update domain"
