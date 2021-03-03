@@ -1,4 +1,4 @@
-FROM node:12.1-alpine
+FROM node:14
 
 # Set instructions on build.
 ONBUILD ADD package.json /app/
@@ -6,7 +6,7 @@ ONBUILD RUN npm install
 ONBUILD ADD . /app
 
 # Define working directory.
-WORKDIR /app
+WORKDIR /usr/src/app
 
 # Define default command.
 CMD ["npm", "start"]
